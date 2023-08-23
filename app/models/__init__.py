@@ -1,1 +1,2 @@
-from .projects import Projects
+from . import projects
+

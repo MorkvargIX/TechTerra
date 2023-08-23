@@ -4,4 +4,4 @@ from app import app
 
 
 if __name__ == "__main__":
-    app.run(debug=c.DEBUG_MODE, port=c.PORT, host=c.HOST)
+    app.run(debug=c.debug_mode, port=c.port, host=c.host)

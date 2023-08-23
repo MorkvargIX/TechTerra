@@ -6,7 +6,6 @@ It incorporates minimal functionalities such as:
 -Work with Flask
 -Create migrations with alembic
 -Write tests on pytest
--Using
 -Database integration
 -Usage of ORM (Object-Relational Mapping)
 -Interaction with external APIs
@@ -34,6 +33,7 @@ The primary objective is to showcase my proficiency in these areas while providi
 
 # Install requirements.txt
 # Run app with manage.py
+# Create your own .config.toml file with settings
 
 # --alembic--
 

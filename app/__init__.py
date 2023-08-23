@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.register_blueprint(index)
 
 # Database settings
-app.config['SQLALCHEMY_DATABASE_URI'] = f'{c.DB_NAME}://{c.DB_USER}:{c.DB_PASSWORD}@{c.DB_HOST}:{c.DB_PORT}/{c.DB_DATABASE}'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'{c.db_name}://{c.db_user}:{c.db_password}@{c.db_host}:{c.db_port}/{c.db_database}'
 db.init_app(app)
 migrate = Migrate(app, db)
 

@@ -1,11 +1,6 @@
-*.pyc
-*.pyo
+*.toml
 
 **/__pycache__/
-**/config/
-**/data/
-**/logs/
-**/bin/
 
 /venv/
 /.idea/

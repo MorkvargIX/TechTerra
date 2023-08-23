@@ -3,6 +3,10 @@
 This website is created to confirm and enhance my hard skills in backend development using Python.
 It incorporates minimal functionalities such as:
 
+-Work with Flask
+-Create migrations with alembic
+-Write tests on pytest
+-Using
 -Database integration
 -Usage of ORM (Object-Relational Mapping)
 -Interaction with external APIs

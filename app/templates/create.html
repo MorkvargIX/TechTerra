@@ -6,7 +6,7 @@
 
 {% block body %}
     <h1 class="form-title">Создание новой работы</h1>
-    <form method="post" class="form-container">
+    <form method="post" class="form-container" enctype="multipart/form-data">
         <input type="text" name="title" placeholder="Название проекта" class="form-control rounded-3">
         <textarea name="text" placeholder="Описание проекта" class="form-control rounded-3"></textarea>
         <label for="startDate">Дата начала:</label>

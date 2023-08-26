@@ -65,3 +65,32 @@
     cursor: pointer;
 }
 
+/* WORKS */
+.projects {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.project {
+    display: flex;
+
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.project-content {
+    flex: 2;
+    padding-right: 20px;
+}
+
+.project-image {
+    flex: 1;
+    text-align: right;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+}

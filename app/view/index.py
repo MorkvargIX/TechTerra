@@ -1,3 +1,5 @@
+import base64
+
 from flask import render_template, current_app, request, redirect
 from app.models.projects import Projects
 from app import db
@@ -24,7 +26,12 @@ def about():
 @index.route('/works/')
 def works():
     current_app.logger.info('Works endpoint')
-    return render_template('works.html')
+    projects = Projects.query.all()
+    return render_template('works.html', projects=projects, image_to_base64=image_to_base64)
+
+
+def image_to_base64(image_data):
+    return base64.b64encode(image_data).decode('utf-8')
 
 
 # Creating forms
@@ -36,14 +43,19 @@ def create_form():
         description = request.form['text']
         start_date = request.form['startDate']
         end_date = request.form['endDate']
+        image = request.files['image'].read()
 
-        post = Projects(name=name, description=description, started_at=start_date, ended_at=end_date)
+        post = Projects(name=name, description=description, image=image, started_at=start_date, ended_at=end_date)
 
-        try:
-            db.session.add(post)
-            db.session.commit()
-            return redirect('/')
-        except:
-            return '501 error - Try again later'
+        db.session.add(post)
+        db.session.commit()
+        return redirect('/')
+
+        # try:
+        #     db.session.add(post)
+        #     db.session.commit()
+        #     return redirect('/')
+        # except:
+        #     return '501 error - Try again later'
     return render_template('create.html')
 

@@ -5,11 +5,67 @@ TechTerra
 {% endblock %}
 
 {% block body %}
-    <div class="header-currency">
-        <h1>Текущий курс доллара к гривне:</h1>
-        <div class="exchange-rate-container">
-            <p class="exchange-rate" id="exchangeRate">27.50</p>
-            <span id="arrow" class="arrow"></span>
+     <div class="currency-weather">
+        <div class="currency">
+            <h2>Текущий курс валюты</h2>
+            <!-- Здесь будет ваш код для отображения текущего курса валюты -->
         </div>
+        <div class="weather">
+            <h2>Погода на неделю</h2>
+            <!-- Здесь будет ваш код для отображения прогноза погоды на неделю -->
+        </div>
+    </div>
+
+    <div class="news">
+        <div class="news-item">
+            <h3>Заголовок новости 1</h3>
+            <p>Текст новости 1</p>
+        </div>
+        <div class="news-item">
+            <h3>Заголовок новости 2</h3>
+            <p>Текст новости 2</p>
+        </div>
+        <div class="news-item">
+            <h3>Заголовок новости 3</h3>
+            <p>Текст новости 3</p>
+        </div>
+    </div>
+
+     <div class="currency-weather">
+        <div class="currency">
+            <!-- Код для текущего курса валюты -->
+        </div>
+        <div class="weather">
+            <!-- Код для прогноза погоды на неделю -->
+        </div>
+    </div>
+
+    <div class="news">
+        <!-- Код для блоков новостей -->
+    </div>
+
+    <div class="task-list">
+        <h2>Список задач</h2>
+        <div class="task">
+            <p>Задача 1</p>
+            <button class="update-task">Обновить</button>
+            <button class="delete-task">Удалить</button>
+        </div>
+        <div class="task">
+            <p>Задача 2</p>
+            <button class="update-task">Обновить</button>
+            <button class="delete-task">Удалить</button>
+        </div>
+        <!-- Продолжите список задач -->
+    </div>
+
+    <div class="feedback-form">
+        <h2>Обратная связь</h2>
+        <form method="post">
+            <input type="text" name="name" placeholder="Ваше имя" class="form-control">
+            <input type="email" name="email" placeholder="Ваш Email" class="form-control">
+            <textarea name="message" placeholder="Ваше сообщение" class="form-control"></textarea>
+            <button class="submit-button" type="submit">Отправить</button>
+        </form>
     </div>
 {% endblock %}

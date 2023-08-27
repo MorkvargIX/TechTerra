@@ -47,15 +47,11 @@ def create_form():
 
         post = Projects(name=name, description=description, image=image, started_at=start_date, ended_at=end_date)
 
-        db.session.add(post)
-        db.session.commit()
-        return redirect('/')
-
-        # try:
-        #     db.session.add(post)
-        #     db.session.commit()
-        #     return redirect('/')
-        # except:
-        #     return '501 error - Try again later'
+        try:
+            db.session.add(post)
+            db.session.commit()
+            return redirect('/')
+        except:
+            return '501 error - Try again later'
     return render_template('create.html')
 

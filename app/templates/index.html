@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<h1>Home</h1>
+TechTerra
 {% endblock %}
 
 {% block body %}
-    <h1 class="main-title">Home page</h1>
-    <div id="chartContainer">
-    <div id="exchangeRateChartContainer">
-        <canvas id="exchangeRateChart"></canvas>
-    </div>
+    <div class="header-currency">
+        <h1>Текущий курс доллара к гривне:</h1>
+        <div class="exchange-rate-container">
+            <p class="exchange-rate" id="exchangeRate">27.50</p>
+            <span id="arrow" class="arrow"></span>
+        </div>
     </div>
 {% endblock %}

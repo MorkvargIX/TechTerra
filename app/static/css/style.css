@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .main-container{
     margin-top: 40px;
     flex-direction: column;
@@ -23,8 +28,11 @@
 
 /* BODY */
 
-.main-body-block {
-    text-align: center;
+main {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
 }
 
 /* FOOTER */
@@ -107,9 +115,9 @@
 
 #chartContainer {
     display: flex;
-    justify-content: center; /* Выравнивание по горизонтали */
-    align-items: flex-start; /* Выравнивание вверх по вертикали */
-    min-height: 100vh; /* Минимальная высота экрана */
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
 }
 
 #exchangeRateChartContainer {
@@ -117,4 +125,42 @@
     width: 100%;
 }
 
+/* INDEX */
+.header-currency {
+    display: flex;
+    align-items: center;
+}
 
+.header-currency h1 {
+    margin: 0;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.exchange-rate-container {
+    display: flex;
+    align-items: center;
+}
+
+.exchange-rate {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    margin-left: 5px;
+}
+
+.up {
+    border-bottom: 10px solid green;
+}
+
+.down {
+    border-top: 10px solid red;
+}

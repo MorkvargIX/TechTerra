@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_migrate import Migrate
-from app.models.projects import db
+from app.models.models import db
 
 from app import config as c
 from app.view.index import index

@@ -196,3 +196,12 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.weather-block{
+    display: flex;
+    list-style: none;
+}
+
+.weather-item{
+    padding-right: 20px;
+}

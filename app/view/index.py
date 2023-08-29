@@ -1,7 +1,7 @@
 import base64
 
 from flask import render_template, current_app, request, redirect
-from app.models.projects import Projects
+from app.models.models import Projects, Tasks, Contacts, Message
 from app import db
 
 from . import index

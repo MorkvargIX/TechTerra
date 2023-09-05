@@ -39,6 +39,7 @@ debug_mode = config.get("app", "debug_mode", True)
 # Keys
 api_key = config.get("keys", "api", "key")
 secret_key = config.get("keys", "secret", "key")
+weather_api_key = config.get("keys", "weather_api", "key")
 
 
 

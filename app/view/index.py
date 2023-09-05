@@ -3,6 +3,7 @@ import base64
 from flask import render_template, current_app, request, redirect
 from app.models.models import Projects, Tasks, Contacts, Message
 from app import db
+from api import weather
 
 from . import index
 
@@ -12,6 +13,7 @@ from . import index
 @index.route('/index')
 def home():
     current_app.logger.info('Home endpoint')
+    forecast = weather.weather_api()
     return render_template('index.html')
 
 

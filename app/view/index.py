@@ -1,6 +1,7 @@
 import base64
 
 from flask import render_template, current_app, request, redirect
+from sqlalchemy.exc import SQLAlchemyError
 from app.models.models import Projects, Tasks, Contacts, Message
 from app import db
 from api import weather
@@ -14,7 +15,7 @@ from . import index
 def home():
     current_app.logger.info('Home endpoint')
     forecast = weather.weather_api()
-    return render_template('index.html')
+    return render_template('index.html', forecast=forecast)
 
 
 # About page
@@ -53,7 +54,9 @@ def create_form():
             db.session.add(post)
             db.session.commit()
             return redirect('/')
-        except:
+        except SQLAlchemyError:
+            db.session.rollback()
             return '501 error - Try again later'
+
     return render_template('create.html')
 

@@ -17,6 +17,7 @@ def weather_api() -> list[dict] | None:
     data = response.json()['forecast']['forecastday']
     for i in data:
         day = {
+            'date': i['date'][5:],
             'avg_temp': i['day']['avgtemp_c'],
             'wind': i['day']['maxwind_kph'],
             'text': i['day']['condition']['text'],

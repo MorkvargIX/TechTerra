@@ -13,11 +13,13 @@ TechTerra
         <div class="weather">
             <h2>Погода на неделю</h2>
             <ul class="weather-block">
-                <li class="weather-item"><p>28.08</p><p>min - 16/max - 35</p></li>
-                <li class="weather-item"><p>29.08</p><p>min - 16/max - 35</p></li>
-                <li class="weather-item"><p>30.08</p><p>min - 16/max - 35</p></li>
-                <li class="weather-item"><p>31.08</p><p>min - 16/max - 35</p></li>
-                <li class="weather-item"><p>01.09</p><p>min - 16/max - 35</p></li>
+                {% for day in forecast %}
+                    <li class="weather-item">
+                        <p>{{ day['date'] }}</p>
+                        <p>Temp: {{ day['avg_temp'] }}</p>
+                        <p>Wind: {{ day['wind'] }}</p>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     </div>

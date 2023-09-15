@@ -1,7 +1,5 @@
-import config as c
-
-from app import app
+from app import app, config
 
 
 if __name__ == "__main__":
-    app.run(debug=c.debug_mode, port=c.port, host=c.host)
+    app.run(debug=config.debug_mode, port=config.port, host=config.host)

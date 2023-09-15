@@ -1,5 +1,5 @@
 import requests
-import config as c
+from app import config as c
 
 URL = 'http://api.weatherapi.com/v1/forecast.json'
 
@@ -21,7 +21,9 @@ def weather_api() -> list[dict] | None:
             'avg_temp': i['day']['avgtemp_c'],
             'wind': i['day']['maxwind_kph'],
             'text': i['day']['condition']['text'],
+            'icon': i['day']['condition']['icon']
         }
         forecast.append(day)
+        print(i)
     return forecast
 

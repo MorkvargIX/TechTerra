@@ -15,10 +15,10 @@ TechTerra
             <ul class="weather-block">
                 {% for day in forecast %}
                     <li class="weather-item">
-                        <img src="{{ url_for('static', filename='img/weather/day/' ~ day['icon_id'] ~ '.png') }}" alt="weather_icon">
+                        <img src="{{ day['icon'] }}" alt="weather_icon">
                         <p>{{ day['date'] }}</p>
-                        <p>Temp: {{ day['avg_temp'] }}</p>
-                        <p>Wind: {{ day['wind'] }}</p>
+                        <p>Temp: {{ day['avg_temp'] }} C</p>
+                        <p>Wind: {{ day['wind'] }} Kph</p>
                     </li>
                 {% endfor %}
             </ul>

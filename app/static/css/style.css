@@ -204,4 +204,14 @@ body {
 
 .weather-item{
     padding-right: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    padding-left: 20px;
+}
+
+.weather-item:hover {
+    box-shadow: 0.4px 0.4px 0px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
 }

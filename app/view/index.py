@@ -1,4 +1,6 @@
 import base64
+import json
+import codecs
 
 from flask import render_template, current_app, request, redirect
 from sqlalchemy.exc import SQLAlchemyError
@@ -15,6 +17,16 @@ from . import index
 def home():
     current_app.logger.info('Home endpoint')
     forecast = weather.weather_api()
+
+    with codecs.open('app/static/img/weather/conditions.json', 'r', encoding='utf-8-sig') as f:
+        data = json.load(f)
+
+    for i in forecast:
+        for element in data:
+            if element['day'] == i['text']:
+                i['icon_id'] = element['icon']
+                break
+
     return render_template('index.html', forecast=forecast)
 
 

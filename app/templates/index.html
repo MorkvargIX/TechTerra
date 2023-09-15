@@ -15,6 +15,7 @@ TechTerra
             <ul class="weather-block">
                 {% for day in forecast %}
                     <li class="weather-item">
+                        <img src="{{ url_for('static', filename='img/weather/day/' ~ day['icon_id'] ~ '.png') }}" alt="weather_icon">
                         <p>{{ day['date'] }}</p>
                         <p>Temp: {{ day['avg_temp'] }}</p>
                         <p>Wind: {{ day['wind'] }}</p>
@@ -39,19 +40,6 @@ TechTerra
         </div>
     </div>
 
-     <div class="currency-weather">
-        <div class="currency">
-            <!-- Код для текущего курса валюты -->
-        </div>
-        <div class="weather">
-            <!-- Код для прогноза погоды на неделю -->
-        </div>
-    </div>
-
-    <div class="news">
-        <!-- Код для блоков новостей -->
-    </div>
-
     <div class="task-list">
         <h2>Список задач</h2>
         <div class="task">
@@ -64,7 +52,6 @@ TechTerra
             <button class="update-task">Обновить</button>
             <button class="delete-task">Удалить</button>
         </div>
-        <!-- Продолжите список задач -->
     </div>
 
     <div class="feedback-form">

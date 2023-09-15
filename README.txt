@@ -19,11 +19,9 @@ The primary objective is to showcase my proficiency in these areas while providi
 
 # WHAT I HAVE TO DO
 
-# TODO add form to create new post for works.html
 # TODO add something on Home and About pages
 # TODO add docker
 # TODO add "Redis" or "MongoDB" (for learning NoSQL)
-# TODO take API key from weatherAPI for get weather info on a week
 # TODO try to do parsing 'main' news from other sites (twitter, googlenews, cnn, bbc, etc.)
 # TODO add test for endpoints
 
@@ -34,6 +32,7 @@ The primary objective is to showcase my proficiency in these areas while providi
 # Install requirements.txt
 # Run app with manage.py
 # Create your own .config.toml file with settings
+# Drop all server connections fuser -k 7007/tcp
 
 # --alembic--
 

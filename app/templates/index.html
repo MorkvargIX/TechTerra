@@ -5,25 +5,24 @@ TechTerra
 {% endblock %}
 
 {% block body %}
-     <div class="currency-weather">
-        <div class="currency">
-            <h2>Текущий курс валюты</h2>
-            <p>36.95</p>
-        </div>
-        <div class="weather">
-            <h2>Погода на неделю</h2>
-            <ul class="weather-block">
-                {% for day in forecast %}
-                    <li class="weather-item">
+
+    <div class="weather">
+        <ul class="weather-block">
+            {% for day in forecast %}
+                <li class="weather-item">
+                    <div class="weather-item-block">
                         <img src="{{ day['icon'] }}" alt="weather_icon">
-                        <p>{{ day['date'] }}</p>
+                        <p>{{ day['date'] }} {{ day['day'] }}</p>
+                    </div>
+                    <div class="weather-item-block">
                         <p>Temp: {{ day['avg_temp'] }} C</p>
                         <p>Wind: {{ day['wind'] }} Kph</p>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
     </div>
+
 
     <div class="news">
         <div class="news-item">

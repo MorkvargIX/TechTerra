@@ -10,6 +10,7 @@ def news_api() -> list[dict] | None:
     response = requests.get(url=URL)
     data = response.json()['articles'][0:3]
     for i in data:
-        data['publishedAt'] = data['publishedAt'][:10]
+        i['publishedAt'] = i['publishedAt'][:10]
+        print(i['publishedAt'])
     return data
 

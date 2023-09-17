@@ -1,12 +1,10 @@
 import base64
-import json
-import codecs
 
 from flask import render_template, current_app, request, redirect
 from sqlalchemy.exc import SQLAlchemyError
 from app.models.models import Projects
 from app import db
-from ..api import weather
+from ..api import weather, news
 
 from . import index
 
@@ -17,8 +15,8 @@ from . import index
 def home():
     current_app.logger.info('Home endpoint')
     forecast = weather.weather_api()
-
-    return render_template('index.html', forecast=forecast)
+    news_data = news.news_api()
+    return render_template('index.html', forecast=forecast, news=news_data)
 
 
 # About page

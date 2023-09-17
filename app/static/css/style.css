@@ -11,7 +11,10 @@
 /* HEADER */
 
 .main-header {
+    position: sticky;
+    width: 100%;
     top: 0;
+    background: #ffffff;
 }
 
 .header-container {
@@ -29,6 +32,7 @@ main {
 /* FOOTER */
 
 .footer-container {
+    width: 100%;
     padding: 40px;
 }
 
@@ -203,4 +207,9 @@ body {
 
 .weather-item:hover {
     transform: scale(1.05);
+}
+
+.news-image{
+    width: 380px;
+    height: 270px;
 }

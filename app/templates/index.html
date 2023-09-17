@@ -26,14 +26,16 @@ TechTerra
     <hr>
 
     <div class="news">
-        <div class="news-item">
-            <img src="путь_к_изображению.jpg" alt="news image">
-            <h4>Заголовок новости 1</h4>
-            <p>Текст новости.</p>
-            <p><a href="полная_статья.html">Читать далее <span>&#8594;</span></a></p>
-            <p>Автор: John Doe</p>
-            <time>09.09.23</time>
-        </div>
+        {% for new in news %}
+            <div class="news-item">
+                <img class="news-image" src="{{ new['urlToImage'] }}" alt="news image">
+                <h4>{{ new['title'] }}</h4>
+                <p>{{ new['description'] }}</p>
+                <p><a href="{{ new['url'] }}">Read more <span>&#8594;</span></a></p>
+                <p>Author: {{ new['author'] }}</p>
+                <time>{{ new['publishedAt'] }}</time>
+            </div>
+        {% endfor %}
     </div>
 
     <hr>

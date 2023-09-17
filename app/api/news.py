@@ -11,6 +11,5 @@ def news_api() -> list[dict] | None:
     data = response.json()['articles'][0:3]
     for i in data:
         i['publishedAt'] = i['publishedAt'][:10]
-        print(i['publishedAt'])
     return data
 

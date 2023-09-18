@@ -7,14 +7,14 @@ TechTerra
 {% block body %}
 
     <div class="weather">
-        <ul class="weather-block">
+        <ul class="weather-block" id="weather-list">
             {% for day in forecast %}
                 <li class="weather-item">
-                    <div class="weather-item-block">
+                    <div class="weather-item-header">
                         <img src="{{ day['icon'] }}" alt="weather_icon">
                         <p>{{ day['date'] }} {{ day['day'] }}</p>
                     </div>
-                    <div class="weather-item-block">
+                    <div class="weather-item-details">
                         <p>Temp: {{ day['avg_temp'] }} C</p>
                         <p>Wind: {{ day['wind'] }} Kph</p>
                     </div>
@@ -22,8 +22,6 @@ TechTerra
             {% endfor %}
         </ul>
     </div>
-
-    <hr>
 
     <div class="news">
         {% for new in news %}

@@ -26,7 +26,7 @@ def weather_api() -> list[dict] | None:
         day_name = days_of_week[day_of_week]
         day = {
             'day': day_name,
-            'date': i['date'][5:],
+            'date': i['date'][5:].replace('-', '.'),
             'avg_temp': i['day']['avgtemp_c'],
             'wind': i['day']['maxwind_kph'],
             'text': i['day']['condition']['text'],

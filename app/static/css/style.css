@@ -105,19 +105,6 @@ main {
     max-height: 400px;
 }
 
-/* CANVAS */
-
-#chartContainer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-}
-
-#exchangeRateChartContainer {
-    max-width: 800px;
-    width: 100%;
-}
 
 /* INDEX */
 body {
@@ -131,15 +118,59 @@ body {
     text-align: center;
 }
 
-.weather {
-    flex: 1;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+.weather-block {
+    display: flex;
+    list-style: none;
+    padding: 0; /* Уберем внешний отступ у списка */
 }
+
+.weather-item {
+    display: flex; /* Добавим flex для элемента .weather-item */
+    align-items: center; /* Выравниваем содержимое вертикально по центру */
+    padding: 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    position: relative;
+}
+
+.weather-item:hover {
+    transform: scale(1.05);
+    border-color: #4CAF50;
+}
+
+.weather-item .weather-item-header {
+    display: flex;
+    align-items: center;
+    flex: 1; /* Занимает максимальное пространство внутри .weather-item */
+}
+
+.weather-item .weather-item-header img {
+    margin-right: 10px; /* Отступ между иконкой и текстом */
+}
+
+.weather-item .weather-item-details {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.weather-item:hover .weather-item-details {
+    right: 0;
+    opacity: 1;
+}
+
+
 
 .news {
     display: flex;
@@ -191,22 +222,6 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.weather-block{
-    display: flex;
-    list-style: none;
-}
-
-.weather-item{
-    padding-right: 20px;
-    transition: transform 0.3s ease-in-out;
-    margin-left: 20px;
-    padding-left: 20px;
-}
-
-.weather-item:hover {
-    transform: scale(1.05);
 }
 
 .news-image{

@@ -113,6 +113,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* WEATHER */
 .currency {
     flex: 1;
     text-align: center;
@@ -121,12 +122,12 @@ body {
 .weather-block {
     display: flex;
     list-style: none;
-    padding: 0; /* Уберем внешний отступ у списка */
+    padding: 0;
 }
 
 .weather-item {
-    display: flex; /* Добавим flex для элемента .weather-item */
-    align-items: center; /* Выравниваем содержимое вертикально по центру */
+    display: flex;
+    align-items: center;
     padding: 20px;
     cursor: pointer;
     border: 1px solid #ccc;
@@ -142,11 +143,11 @@ body {
 .weather-item .weather-item-header {
     display: flex;
     align-items: center;
-    flex: 1; /* Занимает максимальное пространство внутри .weather-item */
+    flex: 1;
 }
 
 .weather-item .weather-item-header img {
-    margin-right: 10px; /* Отступ между иконкой и текстом */
+    margin-right: 10px;
 }
 
 .weather-item .weather-item-details {
@@ -169,25 +170,62 @@ body {
     right: 0;
     opacity: 1;
 }
+/* WEATHER */
 
+/* NEWS */
+.news-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
 
-
-.news {
+.news-carousel {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .news-item {
-    flex: 1;
-    margin: 0 10px;
+    flex: 0 0 calc(33.33% - 15px);
+    margin-right: 20px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 12px;
     border-color: grey;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
+.news-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.prev-button {
+    left: 0;
+}
+
+.next-button {
+    right: 0;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    color: #4CAF50;
+}
+/* NEWS */
+
+/* TASKS */
 .task-list {
     padding: 20px;
 }
@@ -196,6 +234,7 @@ body {
     margin-bottom: 10px;
     padding: 10px;
 }
+/* TASKS */
 
 .form-container {
     max-width: 500px;

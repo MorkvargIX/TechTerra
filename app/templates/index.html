@@ -23,20 +23,22 @@ TechTerra
         </ul>
     </div>
 
-    <div class="news">
-        {% for new in news %}
-            <div class="news-item">
-                <img class="news-image" src="{{ new['urlToImage'] }}" alt="news image">
-                <h4>{{ new['title'] }}</h4>
-                <p>{{ new['description'] }}</p>
-                <p><a href="{{ new['url'] }}">Read more <span>&#8594;</span></a></p>
-                <p>Author: {{ new['author'] }}</p>
-                <time>{{ new['publishedAt'] }}</time>
-            </div>
-        {% endfor %}
+    <div class="news-container">
+        <div class="news-carousel">
+            {% for new in news %}
+                <div class="news-item">
+                    <img class="news-image" src="{{ new['urlToImage'] }}" alt="news image">
+                    <h4><a href="{{ new['url'] }}">{{ new['title'] }}</a></h4>
+                    <p>{{ new['description'] }}</p>
+                    <p>Author:{{ new['author'] }} | Published:{{ new['publishedAt'] }}</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
+        <button class="prev-button"><i class="fas fa-chevron-left"></i> Prev</button>
+        <button class="next-button">Next <i class="fas fa-chevron-right"></i></button>
 
-    <hr>
+
 
     <div class="task-list">
         <h2>Список задач</h2>

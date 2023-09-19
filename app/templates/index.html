@@ -27,10 +27,18 @@ TechTerra
         <div class="news-carousel">
             {% for new in news %}
                 <div class="news-item">
-                    <img class="news-image" src="{{ new['urlToImage'] }}" alt="news image">
-                    <h4><a href="{{ new['url'] }}">{{ new['title'] }}</a></h4>
+                    <div class="news-title">
+                        <img class="news-image" src="{{ new['urlToImage'] }}" alt="news image">
+                        <div class="news-block">
+                            <h4><a href="{{ new['url'] }}">{{ new['title'] }}</a></h4>
+                        </div>
+
+                    </div>
                     <p>{{ new['description'] }}</p>
-                    <p>Author:{{ new['author'] }} | Published:{{ new['publishedAt'] }}</p>
+                    <div class="news-annotations">
+                        <p>{{ new['author'] }}</p>
+                        <p>{{ new['publishedAt'] }}</p>
+                    </div>
                 </div>
             {% endfor %}
         </div>

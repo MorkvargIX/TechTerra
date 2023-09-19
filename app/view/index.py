@@ -4,7 +4,7 @@ from flask import render_template, current_app, request, redirect
 from sqlalchemy.exc import SQLAlchemyError
 from app.models.models import Projects
 from app import db
-from ..api import weather, news
+from ..api import weather, news, bank
 
 from . import index
 
@@ -14,11 +14,22 @@ from . import index
 @index.route('/index')
 def home():
     current_app.logger.info('Home endpoint')
+    months: list = []
+    exchangeRate: list = []
     forecast = weather.weather_api()
     news_data = news.news_api()
-    months = ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл"]
-    exchangeRate = [25, 26, 27, 28, 29, 30, 31]
-    return render_template('index.html', forecast=forecast, news=news_data, months=months, exchangeRate=exchangeRate)
+    finance_history = bank.bank_api()
+    for k, v in finance_history.items():
+        months.append(k[:3])
+        exchangeRate.append(v)
+    return render_template(
+        'index.html',
+        forecast=forecast,
+        news=news_data,
+        months=months,
+        exchangeRate=exchangeRate,
+        finance_history=finance_history
+    )
 
 
 # About page

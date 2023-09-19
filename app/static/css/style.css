@@ -1,3 +1,9 @@
+body, html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .main-container{
     margin-top: 40px;
     flex-direction: column;
@@ -12,7 +18,7 @@
 
 .main-header {
     position: sticky;
-    width: 100%;
+    width: 100hv;
     top: 0;
     z-index: 100;
     background: #ffffff;
@@ -182,7 +188,7 @@ body {
 
 .finance {
     width: 470px;
-    height: 300px;
+    height: 260px;
     padding-top: 40px;
 }
 /* WEATHER */

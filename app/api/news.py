@@ -1,7 +1,6 @@
 import requests
 
 from app import config as c
-from datetime import datetime
 
 URL = f'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey={c.news_api_key}'
 

@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
         data: {
             labels: months,
             datasets: [{
-                label: 'Курс гривны к доллару',
+                label: 'UAH course to USD',
                 data: exchangeRate,
                 borderColor: 'rgb(75, 192, 192)',
-                borderWidth: 2
+                borderWidth: 3
             }]
         },
         options: {

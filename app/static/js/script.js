@@ -25,4 +25,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     prevButton.addEventListener("click", slideLeft);
     nextButton.addEventListener("click", slideRight);
+
+    const chartCanvas = document.getElementById('chart');
+    const ctx = chartCanvas.getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: months,
+            datasets: [{
+                label: 'Курс гривны к доллару',
+                data: exchangeRate,
+                borderColor: 'rgb(75, 192, 192)',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 });
+
+
+

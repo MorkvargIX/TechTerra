@@ -16,7 +16,9 @@ def home():
     current_app.logger.info('Home endpoint')
     forecast = weather.weather_api()
     news_data = news.news_api()
-    return render_template('index.html', forecast=forecast, news=news_data)
+    months = ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл"]
+    exchangeRate = [25, 26, 27, 28, 29, 30, 31]
+    return render_template('index.html', forecast=forecast, news=news_data, months=months, exchangeRate=exchangeRate)
 
 
 # About page

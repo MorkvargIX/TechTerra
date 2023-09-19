@@ -16,6 +16,10 @@
     top: 0;
     z-index: 100;
     background: #ffffff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
 }
 
 .header-container {
@@ -168,6 +172,19 @@ body {
     right: 0;
     opacity: 1;
 }
+
+.weather-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.finance {
+    width: 470px;
+    height: 300px;
+    padding-top: 40px;
+}
 /* WEATHER */
 
 /* NEWS */
@@ -190,14 +207,15 @@ body {
 .news-item {
     flex: 0 0 calc(33.33% - 15px);
     margin-right: 20px;
-    margin-bottom: 20px; /* Добавьте отступ снизу */
+    margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 12px;
     border-color: grey;
     box-sizing: border-box;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавьте тень */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(201, 200, 197, 0.2);
 }
 
 .news-item a{
@@ -213,8 +231,8 @@ body {
 .news-image {
     max-width: 130px;
     max-height: 90px;
-    display: block; /* Делаем изображение блочным элементом */
-    margin: 0 left; /* Выравниваем изображение по центру горизонтально */
+    display: block;
+    margin: 0 left;
     border-radius: 10px;
 }
 
@@ -225,13 +243,13 @@ body {
 
 .news-item p {
     font-size: 14px;
-    overflow: hidden; /* Обрезаем текст, который выходит за пределы блока */
-    text-overflow: ellipsis; /* Добавляем многоточие, если текст обрезается */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .news-item h4,
 .news-item p {
-    text-align: left; /* Выравнивание текста по левому краю */
+    text-align: left;
 }
 
 
@@ -273,14 +291,8 @@ body {
 /* NEWS */
 
 /* TASKS */
-.task-list {
-    padding: 20px;
-}
 
-.task {
-    margin-bottom: 10px;
-    padding: 10px;
-}
+
 /* TASKS */
 
 .form-container {

@@ -7,20 +7,29 @@ TechTerra
 {% block body %}
 
     <div class="weather">
-        <ul class="weather-block" id="weather-list">
-            {% for day in forecast %}
-                <li class="weather-item">
-                    <div class="weather-item-header">
-                        <img src="{{ day['icon'] }}" alt="weather_icon">
-                        <p>{{ day['date'] }} {{ day['day'] }}</p>
-                    </div>
-                    <div class="weather-item-details">
-                        <p>Temp: {{ day['avg_temp'] }} C</p>
-                        <p>Wind: {{ day['wind'] }} Kph</p>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
+        <div class="weather-container">
+            <div class="weather-container-item finance">
+                <script>
+                    var months = {{ months | tojson | safe }};
+                    var exchangeRate = {{ exchangeRate | tojson | safe }};
+                </script>
+                <canvas id="chart"></canvas>
+            </div>
+            <ul class="weather-block weather-container-item" id="weather-list">
+                {% for day in forecast %}
+                    <li class="weather-item">
+                        <div class="weather-item-header">
+                            <img src="{{ day['icon'] }}" alt="weather_icon">
+                            <p>{{ day['date'] }} {{ day['day'] }}</p>
+                        </div>
+                        <div class="weather-item-details">
+                            <p>Temp: {{ day['avg_temp'] }} C</p>
+                            <p>Wind: {{ day['wind'] }} Kph</p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 
     <div class="news-container">
@@ -45,24 +54,6 @@ TechTerra
     </div>
         <button class="prev-button"><i class="fas fa-chevron-left"></i> Prev</button>
         <button class="next-button">Next <i class="fas fa-chevron-right"></i></button>
-
-
-
-    <div class="task-list">
-        <h2>Список задач</h2>
-        <div class="task">
-            <p>Задача 1</p>
-            <button class="update-task">Обновить</button>
-            <button class="delete-task">Удалить</button>
-        </div>
-        <div class="task">
-            <p>Задача 2</p>
-            <button class="update-task">Обновить</button>
-            <button class="delete-task">Удалить</button>
-        </div>
-    </div>
-
-    <hr>
 
     <div class="feedback-form">
         <h2>Обратная связь</h2>

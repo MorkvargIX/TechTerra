@@ -14,7 +14,7 @@ def weather_api() -> list[dict] | None:
     params = {
         'key': c.weather_api_key,
         'q': 'Kiev',
-        'days': 7,
+        'days': 3,
         'aqi': 'no',
         'alerts': 'no'
     }

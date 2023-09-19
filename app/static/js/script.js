@@ -36,14 +36,46 @@ document.addEventListener("DOMContentLoaded", function () {
                 label: 'UAH/USD',
                 data: usd_rate,
                 borderColor: 'rgb(75, 192, 192)',
+                pointBackgroundColor: 'rgb(130, 100, 192)',
                 borderWidth: 3
             },
             {
                 label: 'UAH/EUR',
                 data: euro_rate,
                 borderColor: 'rgb(255, 0, 0)',
+                pointBackgroundColor: 'rgb(130, 100, 192)',
                 borderWidth: 3
-            }]
+            },]
+        },
+        options: {
+            scales: {
+                y: {
+                    ticks: {
+                        font: {
+                            family: 'Source Sans Pro', // Шрифт для меток оси Y
+                        },
+                        color: 'white', // Цвет текста меток оси Y
+                    },
+                },
+                x: {
+                    ticks: {
+                        font: {
+                            family: 'Source Sans Pro', // Шрифт для меток оси Y
+                        },
+                        color: 'white', // Цвет текста меток оси Y
+                    },
+                },
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            family: 'Source Sans Pro', // Шрифт для легенды
+                        },
+                        color: 'white', // Цвет текста легенды
+                    },
+                },
+            },
         },
     });
 });

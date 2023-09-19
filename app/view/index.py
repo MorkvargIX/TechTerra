@@ -15,19 +15,22 @@ from . import index
 def home():
     current_app.logger.info('Home endpoint')
     months: list = []
-    exchangeRate: list = []
+    usd_rate: list = []
+    euro_rate: list = []
     forecast = weather.weather_api()
     news_data = news.news_api()
     finance_history = bank.bank_api()
     for k, v in finance_history.items():
         months.append(k[:3])
-        exchangeRate.append(v)
+        usd_rate.append(v[0])
+        euro_rate.append(v[1])
     return render_template(
         'index.html',
         forecast=forecast,
         news=news_data,
         months=months,
-        exchangeRate=exchangeRate,
+        usd_rate=usd_rate,
+        euro_rate=euro_rate,
         finance_history=finance_history
     )
 

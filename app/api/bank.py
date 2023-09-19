@@ -17,6 +17,6 @@ def bank_api() -> dict | None:
         response = requests.get(f'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?date={month}&json')
         date_obj = datetime.strptime(month, "%Y%m%d")
         month_name = date_obj.strftime("%B")
-        data[month_name] = response.json()[24]['rate']
+        data[month_name] = (response.json()[24]['rate'], response.json()[31]['rate'])
     print(data)
     return data

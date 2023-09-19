@@ -33,19 +33,18 @@ document.addEventListener("DOMContentLoaded", function () {
         data: {
             labels: months,
             datasets: [{
-                label: 'UAH course to USD',
-                data: exchangeRate,
+                label: 'UAH/USD',
+                data: usd_rate,
                 borderColor: 'rgb(75, 192, 192)',
+                borderWidth: 3
+            },
+            {
+                label: 'UAH/EUR',
+                data: euro_rate,
+                borderColor: 'rgb(255, 0, 0)',
                 borderWidth: 3
             }]
         },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
     });
 });
 

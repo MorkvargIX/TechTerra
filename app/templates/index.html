@@ -11,7 +11,8 @@ TechTerra
             <div class="weather-container-item finance">
                 <script>
                     var months = {{ months | tojson | safe }};
-                    var exchangeRate = {{ exchangeRate | tojson | safe }};
+                    var usd_rate = {{ usd_rate | tojson | safe }};
+                    var euro_rate = {{ euro_rate | tojson | safe }};
                 </script>
                 <canvas id="chart"></canvas>
             </div>

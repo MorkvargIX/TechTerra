@@ -16,20 +16,25 @@ TechTerra
                 </script>
                 <canvas id="chart"></canvas>
             </div>
-            <ul class="weather-block weather-container-item" id="weather-list">
-                {% for day in forecast %}
-                    <li class="weather-item">
-                        <div class="weather-item-header">
-                            <img src="{{ day['icon'] }}" alt="weather_icon">
-                            <p>{{ day['date'] }} {{ day['day'] }}</p>
-                        </div>
-                        <div class="weather-item-details">
-                            <p>Temp: {{ day['avg_temp'] }} C</p>
-                            <p>Wind: {{ day['wind'] }} Kph</p>
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
+            <div class="weather-column">
+                <ul class="weather-block weather-container-item weather-column-item" id="weather-list">
+                    {% for day in forecast %}
+                        <li class="weather-item">
+                            <div class="weather-item-header">
+                                <img src="{{ day['icon'] }}" alt="weather_icon">
+                                <p>{{ day['date'] }} {{ day['day'] }}</p>
+                            </div>
+                            <div class="weather-item-details">
+                                <p>Temp: {{ day['avg_temp'] }} C</p>
+                                <p>Wind: {{ day['wind'] }} Kph</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="weather-column-item weather-text">
+                    <p>Whether you're heading for a walk, a trip, or just spending the day at home, up-to-date weather information will help you make the right choice. Enjoy your day!</p>
+                </div>
+            </div>
         </div>
     </div>
 

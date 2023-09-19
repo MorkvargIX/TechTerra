@@ -2,6 +2,9 @@ body, html {
   width: 100%;
   margin: 0;
   padding: 0;
+  background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  font-family: Source Sans Pro;
+  font-size: 18px;
 }
 
 .main-container{
@@ -131,16 +134,20 @@ body {
     display: flex;
     list-style: none;
     padding: 0;
+    padding-right: 60px;
 }
 
 .weather-item {
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
     cursor: pointer;
     border: 1px solid #ccc;
     transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
     position: relative;
+    background-color: rgba(201, 200, 197, 0.2);
+    padding-left: 40px;
+    margin-left: 50px;
 }
 
 .weather-item:hover {
@@ -184,6 +191,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+}
+
+.weather-text{
+    text-align: center;
+
 }
 
 .finance {
